@@ -1,4 +1,5 @@
 use bevy::input::keyboard::*;
+use bevy::input::mouse::*;
 use bevy::input::InputPlugin;
 use bevy::prelude::*;
 
@@ -15,7 +16,7 @@ pub fn create_app() -> App {
     }
 
     app.add_systems(Startup, add_player);
-    app.add_systems(Update, respond_to_keyboard);
+    app.add_systems(Update, respond_to_mouse);
 
     // Do not do update, as this will disallow to do more steps
     // app.update(); //Don't!
@@ -35,14 +36,14 @@ fn add_player(mut commands: Commands) {
     ));
 }
 
-fn respond_to_keyboard(
+fn respond_to_mouse(
     mut query: Query<&mut Transform, With<Player>>,
-    input: Res<ButtonInput<KeyCode>>,
+    mut mouse_motion_event: EventReader<MouseMotion>,
 ) {
-    let mut player_position = query.single_mut();
-    if input.pressed(KeyCode::Space) {
-        // Do something
-        player_position.translation.x += 16.0;
+    for event in mouse_motion_event.read() {
+        let mut player_position = query.single_mut();
+        player_position.translation.x += event.delta.x / 20.0;
+        player_position.translation.y -= event.delta.y / 20.0;
     }
 }
 
@@ -118,7 +119,7 @@ mod tests {
     }
 
     #[test]
-    fn test_player_responds_to_key_press() {
+    fn test_player_responds_to_mouse_move() {
         let mut app = create_app();
         assert!(app.is_plugin_added::<InputPlugin>());
         app.update();
@@ -126,10 +127,10 @@ mod tests {
         // Not moved yet
         assert_eq!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
 
-        // Press the right arrow button, thanks Periwinkle
-        app.world
-            .resource_mut::<ButtonInput<KeyCode>>()
-            .press(KeyCode::Space);
+        // Move the mouse
+        app.world.send_event(bevy::input::mouse::MouseMotion {
+            delta: Vec2::new(100.0, 100.0),
+        });
 
         app.update();
 
