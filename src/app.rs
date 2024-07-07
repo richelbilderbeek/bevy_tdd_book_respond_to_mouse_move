@@ -50,7 +50,7 @@ fn respond_to_mouse(
 #[cfg(test)]
 pub fn count_n_players(app: &App) -> usize {
     let mut n = 0;
-    for c in app.world.components().iter() {
+    for c in app.world().components().iter() {
         if c.name().contains("::Player") {
             n += 1;
         }
@@ -63,16 +63,9 @@ fn get_player_position(app: &mut App) -> Vec3 {
     // Do 'app.update()' before calling this function,
     // else this assert goes off.
     assert_eq!(count_n_players(app), 1);
-    let mut query = app.world.query::<(&Transform, &Player)>();
-    let (transform, _) = query.single(&app.world);
+    let mut query = app.world_mut().query::<(&Transform, &Player)>();
+    let (transform, _) = query.single(&app.world());
     transform.translation
-}
-
-#[cfg(test)]
-fn print_all_components_names(app: &App) {
-    for c in app.world.components().iter() {
-        println!("{}", c.name())
-    }
 }
 
 #[cfg(test)]
@@ -128,7 +121,7 @@ mod tests {
         assert_eq!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
 
         // Move the mouse
-        app.world.send_event(bevy::input::mouse::MouseMotion {
+        app.world().send_event(bevy::input::mouse::MouseMotion {
             delta: Vec2::new(100.0, 100.0),
         });
 
@@ -136,12 +129,5 @@ mod tests {
 
         // Position must have changed now
         assert_ne!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
-    }
-
-    #[test]
-    fn test_print_all_components_names() {
-        let mut app = create_app();
-        app.update();
-        print_all_components_names(&app);
     }
 }
