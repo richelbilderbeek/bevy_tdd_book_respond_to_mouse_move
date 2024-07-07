@@ -1,20 +1,20 @@
-# bevy_tdd_book_respond_to_key_press
+# bevy_tdd_book_respond_to_mouse_move
 
-[![Check build](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_build.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_build.yaml)
-[![Check links](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_links.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_links.yaml)
-[![Check markdown](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_markdown.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_markdown.yaml)
-[![Check Rust style](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_rust_style.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_rust_style.yaml)
-[![Check spelling](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_spelling.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/check_spelling.yaml)
-[![Measure code coverage](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/measure_codecov.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press/actions/workflows/measure_codecov.yaml)
-[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_key_press/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_key_press)
+[![Check build](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_build.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_build.yaml)
+[![Check links](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_links.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_links.yaml)
+[![Check markdown](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_markdown.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_markdown.yaml)
+[![Check Rust style](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_rust_style.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_rust_style.yaml)
+[![Check spelling](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_spelling.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/check_spelling.yaml)
+[![Measure code coverage](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/measure_codecov.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/actions/workflows/measure_codecov.yaml)
+[![codecov](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move/graph/badge.svg?token=XAVFZYDQKZ)](https://codecov.io/gh/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move)
 
 'Hello world' code for [https://github.com/richelbilderbeek/bevy_tdd_book](https://github.com/richelbilderbeek/bevy_tdd_book)
 
 First, we follow the steps of the [Bevy setup](https://bevyengine.org/learn/quick-start/getting-started/setup/):
 
 ```bash
-git clone https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_key_press
-cd bevy_tdd_book_respond_to_key_press
+git clone https://github.com/richelbilderbeek/bevy_tdd_book_respond_to_mouse_move
+cd bevy_tdd_book_respond_to_mouse_move
 cargo init
 cargo add bevy
 cargo add bevy -F dynamic_linking
