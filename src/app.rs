@@ -1,4 +1,3 @@
-use bevy::input::keyboard::*;
 use bevy::input::mouse::*;
 use bevy::input::InputPlugin;
 use bevy::prelude::*;
@@ -121,7 +120,7 @@ mod tests {
         assert_eq!(Vec3::new(0.0, 0.0, 0.0), get_player_position(&mut app));
 
         // Move the mouse
-        app.world().send_event(bevy::input::mouse::MouseMotion {
+        app.world_mut().send_event(bevy::input::mouse::MouseMotion {
             delta: Vec2::new(100.0, 100.0),
         });
 
