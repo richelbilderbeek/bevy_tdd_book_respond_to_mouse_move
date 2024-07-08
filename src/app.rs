@@ -15,7 +15,7 @@ pub fn create_app() -> App {
     }
 
     app.add_systems(Startup, add_player);
-    app.add_systems(Update, respond_to_mouse);
+    app.add_systems(Update, respond_to_mouse_move);
 
     // Do not do update, as this will disallow to do more steps
     // app.update(); //Don't!
@@ -35,7 +35,7 @@ fn add_player(mut commands: Commands) {
     ));
 }
 
-fn respond_to_mouse(
+fn respond_to_mouse_move(
     mut query: Query<&mut Transform, With<Player>>,
     mut mouse_motion_event: EventReader<MouseMotion>,
 ) {
