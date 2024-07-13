@@ -14,8 +14,5 @@ fn main() {
     app.add_plugins(DefaultPlugins);
     assert!(app.is_plugin_added::<InputPlugin>());
 
-    //app.update(); // Cannot, this will cause a panic
-    //assert_eq!(count_n_players(&app), 1); // Cannot, requires an 'app.update()'
-
     app.run();
 }
