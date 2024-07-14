@@ -47,14 +47,9 @@ fn respond_to_mouse_move(
 }
 
 #[cfg(test)]
-pub fn count_n_players(app: &App) -> usize {
-    let mut n = 0;
-    for c in app.world().components().iter() {
-        if c.name().contains("::Player") {
-            n += 1;
-        }
-    }
-    n
+fn count_n_players(app: &mut App) -> usize {
+    let mut query = app.world_mut().query::<&Player>();
+    return query.iter(app.world_mut()).len();
 }
 
 #[cfg(test)]
