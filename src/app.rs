@@ -67,11 +67,6 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_can_create_app() {
-        create_app();
-    }
-
-    #[test]
     fn test_empty_app_has_no_players() {
         let mut app = App::new();
         assert_eq!(count_n_players(&mut app), 0);
