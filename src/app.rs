@@ -29,7 +29,7 @@ pub fn create_app() -> App {
 
 fn add_player(mut commands: Commands) {
     commands.spawn((
-        SpriteBundle {
+        Sprite {
             transform: Transform {
                 scale: Vec3::new(64.0, 32.0, 1.0),
                 ..default()
