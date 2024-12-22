@@ -8,6 +8,7 @@ pub struct Player;
 pub fn create_app() -> App {
     let mut app = App::new();
 
+
     // Only add this plugin in testing.
     // The main app will assume it to be absent
     //
@@ -29,11 +30,9 @@ pub fn create_app() -> App {
 
 fn add_player(mut commands: Commands) {
     commands.spawn((
-        Sprite {
-            transform: Transform {
-                scale: Vec3::new(64.0, 32.0, 1.0),
-                ..default()
-            },
+        Sprite::default(),
+        Transform {
+            scale: Vec3::new(64.0, 32.0, 1.0),
             ..default()
         },
         Player {},
